@@ -5,9 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "redis": "/Applications/redis/src/redis-server ../redis.conf",
+    "redis-shut": "/Applications/redis/src/redis-cli shutdown",
     "web": "cd ./web && npm run dev",
     "start": "npm run web & npm run server",
-    "server": "node server/index.js",
+    "server": "cd ./server && node index.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,5 +18,8 @@
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.13",
     "vite": "^2.8.6"
+  },
+  "dependencies": {
+    "redis": "^4.0.4"
   }
 }
