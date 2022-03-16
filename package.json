@@ -5,11 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "redis": "/Applications/redis/src/redis-server ../redis.conf",
-    "redis-shut": "/Applications/redis/src/redis-cli shutdown",
     "web": "cd ./web && npm run dev",
-    "start": "npm run web & npm run server",
-    "server": "cd ./server && node index.js ",
+    "start": "npm run mongo && npm run web & npm run server",
+    "mongo":"mongod --config /usr/local/etc/mongod.conf",
+    "server": "cd ./server && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

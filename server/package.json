@@ -1,7 +1,11 @@
 {
   "type": "module",
-
+  "scripts": {},
   "dependencies": {
+    "mongodb": "^4.4.1",
     "redis": "^4.0.4"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^4.0.7"
   }
 }

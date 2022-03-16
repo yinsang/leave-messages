@@ -3,6 +3,8 @@ import { getLeveMessageList } from "./api"
 import './App.css'
 export const App = () => {
   const [list,setList] = useState(null)
+  const [nickName,setNickName] = useState('')
+  const [content,setContent] = useState('')
   const getList = async () => {
     const list = await getLeveMessageList();
     console.log(list);
@@ -12,6 +14,24 @@ export const App = () => {
     }
 
   }
+  const onNickNameChange  = (e)=>{
+    setNickName(e.target.value)
+  }
+  const onTextChange  = (e)=>{
+    setContent(e.target.value)
+  }
+  const submit  = async()=>{
+    const res = await fetch('/api/message', {
+      method:"post",
+      data:{
+        author: nickName,
+        content
+      }
+    })
+    console.log(res,'res');
+  }
+  
+  
   useEffect(() => {
     getList()
   }, [])
@@ -22,8 +42,9 @@ export const App = () => {
           nodejs留言板
         </h1>
       </header>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
-      <input type="button" value='发布留言' />
+      <input type="text" placeholder="昵称" onChange={onNickNameChange} />
+      <textarea name="" id="" cols="30" rows="10" onChange={onTextChange}></textarea>
+      <input type="button" value='发布留言' onClick={submit} />
       <ul>
 {
   list&&
