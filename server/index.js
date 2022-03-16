@@ -2,8 +2,7 @@ import url from 'url'
 import http from 'http'
 import mongodb from 'mongodb'
 const {MongoClient  } = mongodb;
-var url = "mongodb://127.0.0.1:27017";
-const client = new MongoClient(url)
+const client = new MongoClient("mongodb://127.0.0.1:27017")
 const route = (pathname)=>{
 
 }
