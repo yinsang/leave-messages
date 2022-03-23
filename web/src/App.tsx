@@ -23,10 +23,10 @@ export const App = () => {
   const submit  = async()=>{
     const res = await fetch('/api/message', {
       method:"post",
-      data:{
+      body:JSON.stringify({
         author: nickName,
         content
-      }
+      })
     })
     console.log(res,'res');
   }

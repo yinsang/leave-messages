@@ -6,7 +6,8 @@ use music // 创建和切换数据库
 db.stats()// 查看数据库状态
 db.getMongo() //查看当前数据库连接地址
 db.dropDatabase() //删除跑路
-
+db.shutdownServer()
+> use admin
 
 
 db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [just calls db.runCommand(...)]
